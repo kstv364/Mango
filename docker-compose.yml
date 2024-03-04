@@ -1,0 +1,60 @@
+version: '3.4'
+
+services:
+
+  sql-server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql-server
+    environment:
+      SA_PASSWORD: "admin@123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1470:1433"
+
+  mango.services.authapi:
+    image: ${DOCKER_REGISTRY-}mangoservicesauthapi
+    build:
+      context: .
+      dockerfile: Mango.Services.AuthAPI/Dockerfile
+
+  mango.web:
+    image: ${DOCKER_REGISTRY-}mangoweb
+    build:
+      context: .
+      dockerfile: Mango.Web/Dockerfile
+
+
+  mango.services.couponapi:
+    image: ${DOCKER_REGISTRY-}mangoservicescouponapi
+    build:
+      context: .
+      dockerfile: Mango.Services.CouponAPI/Dockerfile
+
+
+  mango.services.emailapi:
+    image: ${DOCKER_REGISTRY-}mangoservicesemailapi
+    build:
+      context: .
+      dockerfile: Mango.Services.EmailAPI/Dockerfile
+
+
+  mango.services.orderapi:
+    image: ${DOCKER_REGISTRY-}mangoservicesorderapi
+    build:
+      context: .
+      dockerfile: Mango.Services.OrderAPI/Dockerfile
+
+
+  mango.services.productapi:
+    image: ${DOCKER_REGISTRY-}mangoservicesproductapi
+    build:
+      context: .
+      dockerfile: Mango.Services.ProductAPI/Dockerfile
+
+
+  mango.services.shoppingcartapi:
+    image: ${DOCKER_REGISTRY-}mangoservicesshoppingcartapi
+    build:
+      context: .
+      dockerfile: Mango.Services.ShoppingCartAPI/Dockerfile
+

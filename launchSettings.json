@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "mango.services.authapi": "StartDebugging",
+        "mango.web": "StartDebugging",
+        "mango.services.couponapi": "StartDebugging",
+        "mango.services.emailapi": "StartDebugging",
+        "mango.services.orderapi": "StartDebugging",
+        "mango.services.productapi": "StartDebugging",
+        "mango.services.shoppingcartapi": "StartDebugging"
+      }
+    }
+  }
+}
