@@ -26,7 +26,6 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<BackendApiAuthenticationHttpClientHandler>();
-
 builder.Services.AddScoped<IMessageBus, MessageBus>();
 builder.Services.AddHttpClient("Product", u => u.BaseAddress =
 new Uri(builder.Configuration["ServiceUrls:ProductAPI"])).AddHttpMessageHandler<BackendApiAuthenticationHttpClientHandler>();
@@ -69,6 +68,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+Stripe.StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
 
 app.UseHttpsRedirection();
 app.UseAuthentication();
