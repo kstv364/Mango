@@ -2,6 +2,15 @@ version: '3.4'
 
 services:
 
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    hostname: "my-rabbit"
+    ports:
+      - "5672:5672"   # RabbitMQ default port
+      - "15672:15672" # Management plugin port
+    volumes:
+      - "${APPDATA}/rabbitmq_data:/var/lib/rabbitmq" # Persist data
+
   sql-server:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: sql-server
@@ -10,19 +19,11 @@ services:
       ACCEPT_EULA: "Y"
     ports:
       - "1470:1433"
-
   mango.services.authapi:
     image: ${DOCKER_REGISTRY-}mangoservicesauthapi
     build:
       context: .
       dockerfile: Mango.Services.AuthAPI/Dockerfile
-
-  mango.web:
-    image: ${DOCKER_REGISTRY-}mangoweb
-    build:
-      context: .
-      dockerfile: Mango.Web/Dockerfile
-
 
   mango.services.couponapi:
     image: ${DOCKER_REGISTRY-}mangoservicescouponapi
@@ -52,9 +53,30 @@ services:
       dockerfile: Mango.Services.ProductAPI/Dockerfile
 
 
+  mango.services.rewardapi:
+    image: ${DOCKER_REGISTRY-}mangoservicesrewardapi
+    build:
+      context: .
+      dockerfile: Mango.Services.RewardAPI/Dockerfile
+
+
   mango.services.shoppingcartapi:
     image: ${DOCKER_REGISTRY-}mangoservicesshoppingcartapi
     build:
       context: .
       dockerfile: Mango.Services.ShoppingCartAPI/Dockerfile
+
+
+  mango.gatewaysolution:
+    image: ${DOCKER_REGISTRY-}mangogatewaysolution
+    build:
+      context: .
+      dockerfile: Mango.GatewaySolution/Dockerfile
+
+
+  mango.web:
+    image: ${DOCKER_REGISTRY-}mangoweb
+    build:
+      context: .
+      dockerfile: Mango.Web/Dockerfile
 

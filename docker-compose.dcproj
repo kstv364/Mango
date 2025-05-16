@@ -4,9 +4,9 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>f03c59e8-9bdb-477a-a217-4c794836eb1c</ProjectGuid>
+    <ProjectGuid>29463ac6-411b-44fd-a5b5-7faacd2a4319</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>mango.services.authapi</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>

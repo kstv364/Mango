@@ -37,6 +37,9 @@ Access the application in your web browser at http://localhost:your-port.
 License
 This project is licensed under the MIT License.
 
+## Live 
+
+App deployed live at http://52.66.249.112:32770/
 
 
 

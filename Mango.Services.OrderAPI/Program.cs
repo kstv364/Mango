@@ -3,6 +3,7 @@ using Mango.MessageBus;
 using Mango.Services.OrderAPI;
 using Mango.Services.OrderAPI.Data;
 using Mango.Services.OrderAPI.Extensions;
+using Mango.Services.OrderAPI.RabbmitMQSender;
 using Mango.Services.OrderAPI.Utility;
 using Mango.Services.ShoppingCartAPI.Service;
 using Mango.Services.ShoppingCartAPI.Service.IService;
@@ -26,8 +27,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<BackendApiAuthenticationHttpClientHandler>();
-
-builder.Services.AddScoped<IMessageBus, MessageBus>();
+builder.Services.AddScoped<IRabbmitMQOrderMessageSender, RabbmitMQOrderMessageSender>();
 builder.Services.AddHttpClient("Product", u => u.BaseAddress =
 new Uri(builder.Configuration["ServiceUrls:ProductAPI"])).AddHttpMessageHandler<BackendApiAuthenticationHttpClientHandler>();
 builder.Services.AddControllers();
@@ -69,6 +69,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+Stripe.StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
 
 app.UseHttpsRedirection();
 app.UseAuthentication();
