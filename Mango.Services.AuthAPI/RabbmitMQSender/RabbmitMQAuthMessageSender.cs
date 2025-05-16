@@ -14,7 +14,7 @@ namespace Mango.Services.AuthAPI.RabbmitMQSender
 
         public RabbmitMQAuthMessageSender()
         {
-            _hostName = "localhost";
+            _hostName = "rabbitmq";
             _password = "guest";
             _username = "guest";
         }

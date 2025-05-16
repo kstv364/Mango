@@ -14,7 +14,7 @@ namespace Mango.Services.ShoppingCartAPI.RabbmitMQSender
 
         public RabbmitMQCartMessageSender()
         {
-            _hostName = "localhost";
+            _hostName = "my-rabbit";
             _password = "guest";
             _username = "guest";
         }

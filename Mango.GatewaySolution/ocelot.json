@@ -2,14 +2,14 @@
 
 
   "Routes": [
-    //"ProductAPI": "https://localhost:7000",
+    //"ProductAPI": "http://mango.services.productapi:7000",
     {
       "DownstreamPathTemplate": "/api/product",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7000
+          "Host": "mango.services.productapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/product",
@@ -17,11 +17,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/product/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7000
+          "Host": "mango.services.productapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/product/{id}",
@@ -32,11 +32,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/product",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7000
+          "Host": "mango.services.productapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/product",
@@ -46,14 +46,14 @@
       }
     },
 
-    //"CouponAPI": "https://localhost:7001",
+    //"CouponAPI": "http://localhost:7001",
     {
       "DownstreamPathTemplate": "/api/coupon",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7001
+          "Host": "mango.services.couponapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/coupon",
@@ -61,11 +61,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/coupon/GetByCode/{code}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7001
+          "Host": "mango.services.couponapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/coupon/GetByCode/{code}",
@@ -73,11 +73,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/coupon/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7001
+          "Host": "mango.services.couponapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/coupon/{id}",
@@ -88,11 +88,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/coupon",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7001
+          "Host": "mango.services.couponapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/coupon",
@@ -102,14 +102,14 @@
       }
     },
 
-    //"ShoppingCartAPI": "https://localhost:7003",
+    //"ShoppingCartAPI": "http://localhost:7003",
     {
       "DownstreamPathTemplate": "/api/cart/GetCart/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7003
+          "Host": "mango.services.shoppingcartapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/cart/GetCart/{id}",
@@ -120,11 +120,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/cart/RemoveCart",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7003
+          "Host": "mango.services.shoppingcartapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/cart/RemoveCart",
@@ -135,11 +135,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/cart/CartUpsert",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7003
+          "Host": "mango.services.shoppingcartapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/cart/CartUpsert",
@@ -150,11 +150,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/cart/EmailCartRequest",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7003
+          "Host": "mango.services.shoppingcartapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/cart/EmailCartRequest",
@@ -165,11 +165,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/cart/ApplyCoupon",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7003
+          "Host": "mango.services.shoppingcartapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/cart/ApplyCoupon",
@@ -179,14 +179,14 @@
       }
     },
 
-    //"OrderAPI": "https://localhost:7004",
+    //"OrderAPI": "http://localhost:7004",
     {
       "DownstreamPathTemplate": "/api/order/GetOrders/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "mango.services.orderapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/order/GetOrders/{id}",
@@ -197,11 +197,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/order/GetOrders?userId=''",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "mango.services.orderapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/order/GetOrders/",
@@ -212,11 +212,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/order/GetOrder/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "mango.services.orderapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/order/GetOrder/{id}",
@@ -227,11 +227,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/order/UpdateOrderStatus/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "mango.services.orderapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/order/UpdateOrderStatus/{id}",
@@ -242,11 +242,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/order/ValidateStripeSession",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "mango.services.orderapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/order/ValidateStripeSession",
@@ -257,11 +257,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/order/CreateStripeSession",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "mango.services.orderapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/order/CreateStripeSession",
@@ -272,11 +272,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/order/CreateOrder",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7004
+          "Host": "mango.services.orderapi",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/api/order/CreateOrder",
@@ -287,6 +287,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:7777"
+    "BaseUrl": "http://mango.gatewaysolution:8080"
   }
 }

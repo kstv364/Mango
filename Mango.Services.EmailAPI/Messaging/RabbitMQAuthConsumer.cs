@@ -19,7 +19,7 @@ namespace Mango.Services.EmailAPI.Messaging
             _emailService = emailService;
             var factory = new ConnectionFactory
             {
-                HostName = "localhost",
+                HostName = "my-rabbit",
                 Password = "guest",
                 UserName = "guest",
             };

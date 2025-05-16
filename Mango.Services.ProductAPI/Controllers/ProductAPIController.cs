@@ -126,15 +126,16 @@ namespace Mango.Services.ProductAPI.Controllers
                     }
 
                     string fileName = product.ProductId + Path.GetExtension(ProductDto.Image.FileName);
-                    string filePath = @"wwwroot\ProductImages\" + fileName;
-                    var filePathDirectory = Path.Combine(Directory.GetCurrentDirectory(), filePath);
+                    string relativePath = Path.Combine("wwwroot", "ProductImages", fileName);
+                    var filePathDirectory = Path.Combine(Directory.GetCurrentDirectory(), relativePath);
+
                     using (var fileStream = new FileStream(filePathDirectory, FileMode.Create))
                     {
                         ProductDto.Image.CopyTo(fileStream);
                     }
                     var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.Value}{HttpContext.Request.PathBase.Value}";
                     product.ImageUrl = baseUrl + "/ProductImages/" + fileName;
-                    product.ImageLocalPath = filePath;
+                    product.ImageLocalPath = filePathDirectory;
                 }
 
 

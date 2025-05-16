@@ -25,7 +25,7 @@ namespace Mango.Services.EmailAPI.Messaging
             ExchangeName = _configuration.GetValue<string>("TopicAndQueueNames:OrderCreatedTopic");
             var factory = new ConnectionFactory
             {
-                HostName = "localhost",
+                HostName = "my-rabbit",
                 Password = "guest",
                 UserName = "guest",
             };
