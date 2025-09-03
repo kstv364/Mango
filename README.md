@@ -4,6 +4,10 @@
 
 This project is a full stack web application for a Food Delivery Company called Mango. There are two kinds of users - ADMIN, User. The user can login and add items to cart and order. The ADMIN can add coupons, dishes, etc. The application is containerized using Docker compose. 
 
+## Live 
+
+App deployed live at [AWS](http://ec2-13-203-230-25.ap-south-1.compute.amazonaws.com:32768/)
+
 ## Prerequisites
 
 - Docker Engine installed on the host machine.
@@ -37,9 +41,6 @@ Access the application in your web browser at http://localhost:your-port.
 License
 This project is licensed under the MIT License.
 
-## Live 
-
-App deployed live at [AWS](http://ec2-13-203-230-25.ap-south-1.compute.amazonaws.com:32768/)
 
 
 
