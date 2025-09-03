@@ -39,7 +39,7 @@ This project is licensed under the MIT License.
 
 ## Live 
 
-App deployed live at http://52.66.249.112:32790/
+App deployed live at [AWS](http://ec2-13-203-230-25.ap-south-1.compute.amazonaws.com:32768/)
 
 
 
